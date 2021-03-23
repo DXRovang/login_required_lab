@@ -5,11 +5,11 @@ class SecretsController < ApplicationController
     @secret = session[:name]
   end
 
-  private
+private
 
   def require_login
     if !session.include? :name
-      redirect_to new_session_path
+      redirect_to controller: 'sessions', action: 'new'
     end
   end
 
